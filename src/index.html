@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Tarjeta de crédito válida</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header><h1>Realiza tu donación</h1></header>
+    <main>
+      <div class="credit-card-wrapper">
+        <div class="credit-card">
+          <h3 class="title">credit-card</h3>
+          <span class="bank-name">Banco Unicef</span>
+          <img class="chip" src="card.png" alt="" />
+          <form id="validacionTarjeta">
+            <input
+              type="text"
+              class="card-number"
+              id="ingresarNumero"
+              name="ingresarNumero"
+              pattern="[0-9]*"
+              maxlength="16"
+              minlength="16"
+              onkeypress="return esNumero(event)"
+              required
+            />
+            <input
+              id="submitBtn"
+              class="btnSubmit"
+              type="submit"
+              value="validar"
+            />
+          </form>
+
+          <div class="validity">
+            <span>valid <br />thru</span>
+            <span>11/28</span>
+          </div>
+          <h3 class="holder-name">Katherine C.</h3>
+          <div class="circles"></div>
+        </div>
+      </div>
+    </main>
     <footer></footer>
-    <script src="index.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
