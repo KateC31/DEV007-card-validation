@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display:grid;
+    place-items: center;
+    height: 100vh;
+    background-image: url(./Img/Logo\ de\ uniceff.jpg);
+
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+/*input[type=number] { -moz-appearance:textfield; }*/
+
+.credit-card-wrapper{
+    position: relative;
+}
+
+.credit-card{
+    width: 525px;
+    height: 300px;
+    color:#fff;
+    background: #0099ff;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px 25px;
+    position: relative;
+    font-family: 'poppins',sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+ .credit-card-wrapper::before{
+    top:0;
+    right: 0;
+    transform: translate(25%,-40%);
+ }
+
+ .credit-card-wrapper::after{
+    border-radius: 50%;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%,50%);
+ }
+ .credit-card .title{
+    text-transform: capitalize;
+ }
+ .credit-card .chip{
+    max-height: 70px;
+    margin: 10px 0;
+ }
+
+ .credit-card .bank-name{
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    text-transform: capitalize;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 600;
+ }
+
+ .credit-card .card-number{
+    font-family: "orbitron",sans-serif;
+    letter-spacing: 7px;
+    text-shadow: 3px 3px 2px rgba(0,0,0,0.6);
+    height: 30px;
+    width: 250px;
+    background-color: transparent;
+    border: white 1px solid;
+    color: white;
+ }
+ .credit-card .btnNumber{
+   height: 30px;
+    width: 70px;
+ }
+
+ .credit-card .validity{
+    text-transform: capitalize;
+    margin: 20px 0 25px;
+    display: flex;
+    align-items: center;
+ }
+ .validity span:first-child{
+  margin-right: 20px;
+  line-height: 1.2;
+  text-align: right;
+ }
+ .validity span:nth-child(2){
+    font-weight: 600;
+ }
+ .credit-card .holder-name{
+    font-weight: 300;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-size: 16px;
+ }
+ 
+ .circles {
+   position:absolute;
+   bottom: 0;
+   right: 0;
+   width: 70px;
+   height: 70px;
+   background-image: url(/src/Img/unicef\ dorado.png);
+   background-size: cover;
+   
+ }
