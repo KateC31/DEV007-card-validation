@@ -1,39 +1,41 @@
 import validator from "./validator.js";
-function esNumero(evt) {
-  // code is the decimal ASCII representation of the pressed key.
-  const code = evt.which ? evt.which : evt.keyCode;
-  if (code === 8) {
-    // backspace.
-    return true;
-  } else if (code >= 48 && code <= 57) {
-    // is a number.
-    
-    return true;
-  } else {
-    // other keys.
+let creditCardNumber = ''
+
+function esNumero(event) {
+  const keyCode = event.which ? event.which : event.keyCode;
+  const inputChar = String.fromCharCode(keyCode);
+
+  if (!/^[0-9#]+$/.test(inputChar)) {
+    event.preventDefault();
     return false;
   }
+
+  return true;
 }
 
 document.getElementById("validacionTarjeta").addEventListener("submit", (event) => {
   event.preventDefault();
-  const numeroDeTarjeta = document.getElementById("ingresarNumero").value;
-  validator.isValid(numeroDeTarjeta);
-  const enmascarado = validator.unmaskify(numeroDeTarjeta);
-  const validación = validator.isValid(numeroDeTarjeta);
-  document.getElementById("ingresarNumero").value = enmascarado;
-  if (validación === true) {
+
+  const validación = validator.isValid(creditCardNumber);
+
+  if (validación) {
     alert("Tu tarjeta es valida");
+    creditCardNumber = ''
   } else {
     alert("Tu tarjeta no es valida");
+    creditCardNumber = ''
   }
 });
 
-ingresarNumero.addEventListener("keydown", (event) => {
-  const numeroDeTarjeta = document.getElementById("ingresarNumero").value;
-  const enmascarado = validator.maskify(numeroDeTarjeta);
-  document.getElementById("ingresarNumero").value = enmascarado;
+ingresarNumero.addEventListener("keydown", e => {
+  if(creditCardNumber.length < 16){
+    if(/\d/.test(e.key)){
+      creditCardNumber += e.key
+      e.target.value = validator.maskify(e.target.value)
+    }else{
+      alert("Solo se permite el uso de numeros")
+    }
+  }else{
+    alert("porfavor introducir un numero valido de tarjeta de credito no superior a 16 digitos", location.reload())
+  }
 });
-
-window.esNumero = esNumero;
-window.validator = validator;
