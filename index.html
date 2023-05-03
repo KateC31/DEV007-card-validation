@@ -13,15 +13,14 @@
           <h3 class="title">credit-card</h3>
           <span class="bank-name">Banco Unicef</span>
           <img class="chip" src="card.png" alt="" />
-          <form id="validacionTarjeta">
+          <form id="validacionTarjeta"  novalidate>
             <input
               type="text"
               class="card-number"
               id="ingresarNumero"
               name="ingresarNumero"
-              pattern="[0-9]*"
+              pattern="[0-9#]{16}"
               maxlength="16"
-              minlength="16"
               onkeypress="return esNumero(event)"
               required
             />
