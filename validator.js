@@ -1,6 +1,6 @@
 const validator = {
   isValid: function (creditCardNumber) {
-
+    if(creditCardNumber === 0 || creditCardNumber.length === 0 || !creditCardNumber) return false
     const tarjeta = creditCardNumber.split("");
     const reversarTarjeta = tarjeta.reverse();
     const resultado = [];
@@ -32,7 +32,8 @@ const validator = {
     return false;
   },
   maskify: function (creditCardNumber) {
-    return creditCardNumber.replace(/\d(?=(?:\D*\d){3})/g, "#"); 
+    return creditCardNumber.slice(0,-4).replace(/[0-9 a-z A-Z]/g, "#")+ creditCardNumber.slice(-4)
+
   }
 };
 

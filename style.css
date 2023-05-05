@@ -24,7 +24,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .credit-card{
-    width: 525px;
+    width: 500px;
     height: 300px;
     color:#fff;
     background: #0099ff;
@@ -35,22 +35,6 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: 'poppins',sans-serif;
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
-
- .credit-card-wrapper::before{
-    top:0;
-    right: 0;
-    transform: translate(25%,-40%);
- }
-
- .credit-card-wrapper::after{
-    border-radius: 50%;
-    left: 0;
-    bottom: 0;
-    transform: translate(-50%,50%);
- }
- .credit-card .title{
-    text-transform: capitalize;
- }
  .credit-card .chip{
     max-height: 70px;
     margin: 10px 0;
@@ -76,7 +60,7 @@ input[type=number]::-webkit-outer-spin-button {
     border: white 1px solid;
     color: white;
  }
- .credit-card .btnNumber{
+ .credit-card .btnSubmit{
    height: 30px;
     width: 70px;
  }
@@ -104,8 +88,8 @@ input[type=number]::-webkit-outer-spin-button {
  
  .circles {
    position:absolute;
-   bottom: 0;
-   right: 0;
+   bottom: 5px;
+   right: 5px;
    width: 70px;
    height: 70px;
    background-image: url(/src/Img/unicef\ dorado.png);
